@@ -6,6 +6,8 @@ a:active {color: #eee; text-decoration: none;}
 body{
     margin: 0%;
     background-image: url('img/background.png');
+    background-size: cover;
+    background-attachment: fixed;
     color: white;
 }
 

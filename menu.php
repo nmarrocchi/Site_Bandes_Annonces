@@ -6,8 +6,6 @@ if(isset($_POST["Disconnect"])){
     $_SESSION["Logged"] = false;
 }
 
-
-function menu_check() {
     if ($_SESSION["Logged"] !== true) {
         echo ('
             
@@ -36,7 +34,6 @@ function menu_check() {
 
         return true;
     }
-}
 
 ?>
 

@@ -2,6 +2,8 @@
         <img src="img/Logo.png" alt="Logo">
     </div>
 
+    <?php include "menu.php"; ?>
+
     </div>
 
         <ul class="menu">

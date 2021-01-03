@@ -33,22 +33,8 @@ echo "J'ai eu un problème erreur :".$e->getMessage();
 <body>
 
 <?php 
+echo $_SESSION["Logged"];
 include "header.php";
-
-try{
-        if(connection($BDD)){
-            if(check()){
-                include "menu.php";
-            }
-            else{
-                connection($BDD);
-            }
-        }
-    }
-
-    catch(Exception $e){
-        echo "J'ai eu un problème erreur :".$e->getMessage();
-    }
 
 ?>
 
