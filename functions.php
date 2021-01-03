@@ -3,10 +3,8 @@ $BDD = new PDO('mysql:host=localhost; dbname=tpfinalphmysql; charset=utf8','root
 
 function check() {
     if ($_SESSION["Logged"] !== true) {
-        echo "false";
       return false;
     }else{
-        echo "True";
         return true;
     }
 }
@@ -20,6 +18,7 @@ function connection($BDD){
             $tab = $Result->fetch();
             $_SESSION["Logged"] = true;
             $_SESSION["ID_User"] = $tab['id'];
+            header("Location: index.php");
             
             return true;
         }else{
@@ -28,4 +27,11 @@ function connection($BDD){
     }
 
 } 
+
+
+if(isset($_POST["Disconnect"])){
+    $_SESSION["Logged"] = false;
+}
+
 ?>
+

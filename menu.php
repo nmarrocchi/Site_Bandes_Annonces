@@ -2,10 +2,6 @@
 
 <?php
 
-if(isset($_POST["Disconnect"])){
-    $_SESSION["Logged"] = false;
-}
-
     if ($_SESSION["Logged"] !== true) {
         echo ('
             

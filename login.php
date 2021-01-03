@@ -42,9 +42,9 @@ $LoginValid = "";
 
                 <form action="Login.php" method="post">
                 <b class='LoginValid'><?php echo $LoginValid ?></b>
-                <p><input type="text" placeholder="Username" name="Login_Username"></p>
-                <p><input type="password" placeholder="Password" name="Login_Password"></p>
-               <p><input type="submit" name='Login_submit' value="Login"></p>
+                <p><input type="text" placeholder="Username" name="Username"></p>
+                <p><input type="password" placeholder="Password" name="Password"></p>
+               <p><input type="submit" name='submit' value="Login"></p>
         </form>
             </div>
 

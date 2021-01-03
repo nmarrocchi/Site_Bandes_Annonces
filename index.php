@@ -33,7 +33,6 @@ echo "J'ai eu un problème erreur :".$e->getMessage();
 <body>
 
 <?php 
-echo $_SESSION["Logged"];
 include "header.php";
 
 ?>
