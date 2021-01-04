@@ -11,7 +11,6 @@
             <li><a href="#">Trier par ▼ </a>
 		        <ul>
 			        <li><a href="index.php?OrderBy=<?php echo "nom"; ?>">Ordre Alphabétique</a></li>
-			        <li><a href="index.php?OrderBy=<?php echo "genre"; ?>">Catégorie</a></li>
 			        <li><a href="index.php?OrderBy=<?php echo "durée"; ?>">Durée</a></li>
                     <li><a href="index.php?OrderBy=<?php echo "date"; ?>">Date</a></li>
                 </ul>

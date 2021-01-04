@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "fonction.php";
+    include "functions.php";
 ?>
 
 <!DOCTYPE html>
@@ -16,39 +16,16 @@
 
 <?php
 
+//Tri par défaut des films par nom
 if (!isset($_GET['OrderBy']))
     $_GET['OrderBy']  = "nom";
 
-
-try{
-
-$BDD = new PDO('mysql:host=localhost; dbname=tpfinalphMySql; charset=utf8','root', 'root');
-
 $Result = $BDD->query("SELECT * FROM films ORDER BY ".$_GET['OrderBy']." ASC");
-
-
-
-}catch(Exception $e){
-
-echo "J'ai eu un problème erreur :".$e->getMessage();
-}
-
 
 include('Header.php');
 
-
-    try{
-
-$BDD = new PDO('mysql:host=127.0.0.3; dbname=tpfinalphMySql; charset=utf8','root', 'root');
-
 $MovieResult = $BDD->query("SELECT * FROM films WHERE id = ".$_GET['movie']."");
 $Data = $MovieResult->fetch();
-
-
-}catch(Exception $e){
-
-echo "J'ai eu un problème erreur :".$e->getMessage();
-}
 
 ?>
 
@@ -60,6 +37,7 @@ echo "J'ai eu un problème erreur :".$e->getMessage();
             </div>
         </div>   
 
+        <!-- Bande annonce ytb du film -->
         <div class="lecteur_ytb">
             <iframe width="560" height="315" src="<?php echo $Data['url-youtube']; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
         </div>

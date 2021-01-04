@@ -5,8 +5,8 @@ include "functions.php";
 $ValueValid = "";
 try{
     if (isset($_POST["submit"])) {
-        // Inscription si les champs ne sont pas vides et si le nom d'utilisateur n'est pas utilisé
 
+        // Inscription si les champs ne sont pas vides et si le nom d'utilisateur n'est pas utilisé
         if(!empty($_POST['Username']) AND !empty($_POST['Password'])){
 
             $exist = $BDD->query("SELECT COUNT(*) FROM User WHERE Username ='".$_POST['Username']."'");
@@ -75,47 +75,3 @@ catch(Exception $e){
     
 </body>
 </html>
-
-
-
-<?php
-/*
-$ValueValid='';
-$bdd = new PDO('mysql:host=127.0.0.1; dbname=tpfinalphMySql; charset=utf8','root', 'root');
-
-if (isset($_POST['submit'])) {
-    if(!empty($_POST['Username']) AND !empty($_POST['Password'])){
-        $ValueValid = '';
-        $Username = htmlspecialchars($_POST['Username']);
-        $Password = htmlspecialchars($_POST['Password']); 
-
-        $UserCheck = $bdd->prepare("SELECT `Username` FROM `user` WHERE `Username` = '".$Username."'");
-        $UserCheck->execute();
-        $Count = $UserCheck->rowCount();
-        $UserCheck->closeCursor();
-
-        if ($Count != 0 ) {
-            $ValueValid = 'Le pseudo est déja utilisé';
-        }
-        else{
-           $UserBDD = $bdd->prepare("SELECT * FROM user WHERE Username = '".$Username."' AND Password = '".$Password."'");
-            $UserBDD->execute();
-
-            $UserAdd = $bdd->prepare("INSERT INTO user (Username, Password) VALUES ('".$Username."', '".$Password."')");
-            $UserAdd->execute();
-            $UserAdd->closeCursor(); // Termine le traitement de la requète
-            $ValueValid = 'Compte créé , vous pouvez maintenant vous connecter'; 
-        }
-
-        
-
-
-            
-    }
-    else{
-        $ValueValid = 'Veuillez compléter tout les champs...';
-    }
-
-  }
-  */
-  ?>

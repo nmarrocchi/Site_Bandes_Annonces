@@ -2,22 +2,12 @@
 session_start();
 include "functions.php";
 
-if (!isset($_GET['OrderBy']))
+if (!isset($_GET['OrderBy'])){
     $_GET['OrderBy']  = "nom";
-
-
-try{
-
-$BDD = new PDO('mysql:host=localhost; dbname=tpfinalphMySql; charset=utf8','root', 'root');
+}
 
 $Result = $BDD->query("SELECT * FROM films ORDER BY ".$_GET['OrderBy']." ASC");
 
-
-
-}catch(Exception $e){
-
-echo "J'ai eu un problème erreur :".$e->getMessage();
-}
 ?>
 
 
@@ -34,7 +24,6 @@ echo "J'ai eu un problème erreur :".$e->getMessage();
 
 <?php 
 include "header.php";
-
 ?>
 
   <div class="Contenu">
@@ -48,8 +37,6 @@ include "header.php";
                 <td class="Movie_Pic"><img src="img/movies/<?php echo $Data["nom"]; ?>.jpg" alt ="<?php echo $Data["nom"]; ?>"></td>
                 <td class="Movie_Infos">
                     <p class="Movie_Name"><?php echo $Data["nom"]; ?> <b><i> - <?php echo $Data["date"]; ?></i></b></p>
-                    <p class="Movie_Category"><?php echo $Data["genre1"]; ?></p>
-                    <p class="Movie_Category"><?php echo $Data["genre2"]; ?></p>
                     <p class="Movie_Time&Date"><?php echo $Data["durée"]; ?> minutes</p>
                 </td>
             </tr>
